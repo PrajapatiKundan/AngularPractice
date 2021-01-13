@@ -1,0 +1,9 @@
+<app-child 
+    [receivedTextOfChild] = "sendText"
+    (customEventOfChild) = "requestText($event)"
+>
+</app-child>
+<h2 *ngIf="receivedText">
+    This is the parent component. I received a string '{{ receivedText }}' from the child component and I capitalize it here {{ receivedText | uppercase}}
+</h2>
+

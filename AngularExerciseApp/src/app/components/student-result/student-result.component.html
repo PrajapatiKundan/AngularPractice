@@ -1,0 +1,18 @@
+<table>
+  <tr>
+    <th>Sr.</th>
+    <th>Student Name</th>
+    <th>Physics</th>
+    <th>Maths</th>
+    <th>Chemistry</th>
+    <th>Average</th>
+  </tr>
+  <tr *ngFor="let student of studentsList; index as i;">
+    <td>{{ i + 1 }}.</td>
+    <td>{{ student.name }}</td>
+    <td>{{ student.physics }}</td>
+    <td>{{ student.maths }}</td>
+    <td>{{ student.chemistry }}</td>
+    <td>{{ findAverage(student) }}</td>
+  </tr>
+</table>

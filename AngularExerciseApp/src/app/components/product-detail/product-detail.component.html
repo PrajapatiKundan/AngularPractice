@@ -1,0 +1,30 @@
+<div class="container">
+  Search: 
+  <input 
+    [(ngModel)] = "searchData" 
+    id="text" 
+    (keyup-enter) = "searchData"
+    type="text"><br>
+  <label class="txt" for="text">{{ searchData }}</label>
+  <table>
+    <tr>
+      <th>Image</th>
+      <th>Product Name</th>
+      <th>Product Code</th>
+      <th>Branch Name</th>
+      <th>Branch Code</th>
+      <th>Shipping Address</th>
+      <th>Details</th>
+    </tr>
+    <tr *ngFor="let product of products;">
+      <td><img style="height: 85px; width: 85px;" [src]="product.imgUrl" alt=""></td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.code }}</td>
+      <td>{{ product.branchName }}</td>
+      <td>{{ product.branchCode }}</td>
+      <td>{{ product.shippingAddress }}</td>
+      <td><button class="btn" (click)="handleClick(product)">Details</button></td>
+    </tr>
+  </table>
+</div>
+  
