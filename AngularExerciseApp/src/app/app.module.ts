@@ -11,6 +11,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { FormsModule } from '@angular/forms';
 import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/child/child.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { ChildComponent } from './components/child/child.component';
     WrapPipe,
     ProductDetailComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
   ],
   imports: [
     BrowserModule,
