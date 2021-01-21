@@ -1,3 +1,4 @@
+import { ProductsService } from './../../services/products.service';
 import { Product } from './../../models/product';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,35 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class ProductDetailComponent implements OnInit {
 
   searchData : string = "";
-  products: Product[] = [
-    {
-      name: "Alienware",
-      code: 1,
-      branchName: "Branch 1",
-      branchCode: 100,
-      shippingAddress: "Address 1",
-      imgUrl: "assets/images/alienware.jpg"
-    },
-    {
-      name: "Samsung m21",
-      code: 2,
-      branchName: "Branch 2",
-      branchCode: 101,
-      shippingAddress: "Address 2",
-      imgUrl: "assets/images/m21.jpg"
-    },
-    {
-      name: "Iphone 12",
-      code: 3,
-      branchName: "Branch 3",
-      branchCode: 102,
-      shippingAddress: "Address 3",
-      imgUrl: "assets/images/iphone12.jpg"
-    }
-  ]
-  constructor() { }
+  products: Product[] = [];
+  constructor(private productsService: ProductsService) { }
 
   ngOnInit(): void {
+    this.productsService.getProducts().subscribe( (productsList) => {
+      console.log(productsList);
+      this.products = (<Product[]>productsList);
+    })
   }
 
   handleClick(product: Product){

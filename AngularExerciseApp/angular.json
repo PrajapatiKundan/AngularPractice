@@ -25,7 +25,8 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              { "glob": "product-details.json", "input": "../", "output": "./assets/" }
             ],
             "styles": [
               "src/styles.css"
